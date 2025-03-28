@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Book Library</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by title or author...">
+                <button id="clearSearchBtn" class="clear-search-btn hidden"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls-container">
+            <div class="view-controls">
+                <button id="gridViewBtn" class="view-btn active"><i class="fas fa-th-large"></i> Grid</button>
+                <button id="listViewBtn" class="view-btn"><i class="fas fa-list"></i> List</button>
+            </div>
+            <div class="sort-controls">
+                <label for="sortBy">Sort by:</label>
+                <select id="sortBy">
+                    <option value="title">Title (A-Z)</option>
+                    <option value="title-desc">Title (Z-A)</option>
+                    <option value="date">Published Date (Newest)</option>
+                    <option value="date-asc">Published Date (Oldest)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="booksContainer" class="books-grid"></div>
+
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="noResults" class="no-results hidden">
+            <p>No books found matching your search.</p>
+        </div>
+
+        <div id="paginationContainer" class="pagination-container">
+            <div class="pagination-controls">
+                <button id="prevPageBtn" class="pagination-button" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextPageBtn" class="pagination-button">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="pagination-info" id="paginationInfo"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Book Library | Powered by FreeAPI.app</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
