@@ -185,7 +185,6 @@ function displayBooks() {
             `;
         }
         
-        // Make the card clickable (opens more details link)
         bookCard.addEventListener('click', function(e) {
             if (!e.target.closest('a')) {
                 window.open(bookInfo.infoLink || '#', '_blank');
